@@ -26,6 +26,7 @@ local electroplater = {
     corpse = "chemical-plant-remnants",
     dying_explosion = "chemical-plant-explosion",
     circuit_wire_max_distance = assembling_machine_circuit_wire_max_distance,
+    heating_energy = "80kW",
     circuit_connector = circuit_connector_definitions.create_vector(
         universal_connector_template,
         {
@@ -87,7 +88,14 @@ local electroplater = {
               }
             }
           }
-        }
+        },
+      frozen_patch = {
+        filename = "__BrassTacks__/graphics/entity/electroplating-machine-frozen.png",
+        width = 192,
+        height = 192,
+        scale = 0.5
+      },
+      reset_animation_when_frozen = false
     },
     impact_category = "metal-large",
     open_sound = {filename = "__base__/sound/open-close/fluid-open.ogg", volume = 0.5},
