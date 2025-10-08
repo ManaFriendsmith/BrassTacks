@@ -367,6 +367,8 @@ if mods["space-age"] then
                 {type="item", name="copper-ore", amount=1, probability = 0.03},
                 {type="item", name="zinc-ore", amount=1, probability = 0.03}
             },
+            subgroup = "fulgora-processes",
+            order = "a[trash]-ab",
             energy_required = 0.125,
             allow_productivity = false,
             allow_quality = false,
