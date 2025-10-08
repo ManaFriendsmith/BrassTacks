@@ -135,6 +135,8 @@ end
 
 --FULGORA
 
+tm.AddUnlock("recycling", "brass-separation")
+
 rm.RemoveProduct("scrap-recycling", {type="item", name="steel-plate", probability=0.04, amount=1})
 if misc.difficulty < 3 then
     rm.AddProduct("scrap-recycling", {type="item", name="galvanized-steel-plate", probability=0.05, amount=1})

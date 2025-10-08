@@ -55,6 +55,7 @@ data:extend({
         stack_size = 50,
         default_import_location = "nauvis",
         canonical_cost = 1,
+        canonical_recipe = true,
         weight = 1*kg
       },
       {

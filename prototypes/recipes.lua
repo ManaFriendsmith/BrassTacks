@@ -348,74 +348,28 @@ else
 end
 
 if mods["space-age"] then
-    data.raw.item["brass-plate"].localised_description = {"recipe-description.hint-nonstandard-recycling"}
-    data.raw.item["zinc-plate"].localised_description = {"recipe-description.hint-nonstandard-recycling"}
+    --data.raw.item["brass-plate"].localised_description = {"recipe-description.hint-nonstandard-recycling"}
+    --data.raw.item["zinc-plate"].localised_description = {"recipe-description.hint-nonstandard-recycling"}
+
+    data.raw.recipe["brass-plate"].force_auto_recycle = true
 
     data:extend({
         {
             type = "recipe",
-            name = "custom-brass-plate-recycling",
-            localised_name = {"recipe-name.recycling", {"item-name.brass-plate"}},
-            icons = {
-                      {
-                        icon = "__quality__/graphics/icons/recycling.png",
-                        icon_size = 64
-                      },
-                      {
-                        icon = "__BrassTacks__/graphics/classic/icons/brass-plate.png",
-                        icon_size = 64
-                      },
-                      {
-                        icon = "__quality__/graphics/icons/recycling-top.png",
-                        icon_size = 64
-                      }
-            },
-            category = "recycling",
+            name = "brass-separation",
+            icon = "__BrassTacks__/graphics/classic/icons/brass-separation.png",
+            icon_size = 64,
+            category = "centrifuging",
             ingredients = {
-                {type="item", name="brass-plate", amount=1}
+                {type="item", name="brass-precursor", amount=1}
             },
             results = {
                 {type="item", name="copper-ore", amount=1, probability = 0.03},
                 {type="item", name="zinc-ore", amount=1, probability = 0.03}
             },
-            bespoke = "brass-plate",
-            energy_required = 3.2/16,
+            energy_required = 0.125,
             allow_productivity = false,
-            enabled = true,
-            hidden = true,
-            allow_decomposition = false,
-            unlock_results = false
-        },
-        {
-            type = "recipe",
-            name = "custom-zinc-plate-recycling",
-            localised_name = {"recipe-name.recycling", {"item-name.zinc-plate"}},
-            icons = {
-                      {
-                        icon = "__quality__/graphics/icons/recycling.png",
-                        icon_size = 64
-                      },
-                      {
-                        icon = "__BrassTacks__/graphics/classic/icons/zinc-plate.png",
-                        icon_size = 64
-                      },
-                      {
-                        icon = "__quality__/graphics/icons/recycling-top.png",
-                        icon_size = 64
-                      }
-            },
-            category = "recycling",
-            ingredients = {
-                {type="item", name="zinc-plate", amount=1}
-            },
-            results = {
-                {type="item", name="zinc-ore", amount=1, probability = 0.06}
-            },
-            bespoke = "zinc-plate",
-            energy_required = 3.2/16,
-            allow_productivity = false,
-            enabled = true,
-            hidden = true,
+            allow_quality = false,
             allow_decomposition = false,
             unlock_results = false
         },
