@@ -37,4 +37,5 @@ The assets derived from Factorio assets in this mod are:
 - zinc ore entity and item (derived from stone)
 - zinc ore particle (derived from stone particle)
 - cheese ore entity, item and technology icon (derived from copper ore)
+- ore icons in brass-separation icon (derived from copper ore and stone)
 - pipe connector for electroplating machine (derived from assembling machine pipe connector)
