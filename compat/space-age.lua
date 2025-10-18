@@ -241,3 +241,13 @@ if misc.difficulty > 1 then
     --this doesn't even make sense, I just want you to suffer.
     rm.ReplaceIngredientProportional("railgun-ammo", "steel-plate", "galvanized-steel-plate")
 end
+
+if misc.difficulty == 3 then
+    if (rm.GetIngredientCount("cryogenic-plant", "differential-girdlespring") == 0) and (rm.GetIngredientCount("cryogenic-plant", "non-reversible-tremie-pipe") == 0) then
+        rm.AddIngredient("cryogenic-plant", "spurving-bearing", 4)
+    end
+
+    if not mods["ThemTharHills"] then
+        rm.AddIngredient("railgun-turret", "spurving-bearing", 5)
+    end
+end
