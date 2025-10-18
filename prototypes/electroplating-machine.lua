@@ -23,7 +23,7 @@ local electroplater = {
     minable = {mining_time = 0.1, result = "electroplating-machine"},
     fast_replaceable_group = "electroplating-machine",
     max_health = 300,
-    corpse = "chemical-plant-remnants",
+    corpse = "electroplating-machine-remnants",
     dying_explosion = "chemical-plant-explosion",
     circuit_wire_max_distance = assembling_machine_circuit_wire_max_distance,
     heating_energy = "80kW",
@@ -206,6 +206,7 @@ local electroplater2 = table.deepcopy(electroplater)
 electroplater2.name = "advanced-electroplating-machine"
 electroplater2.minable.result = "advanced-electroplating-machine"
 electroplater2.icon = "__BrassTacks__/graphics/icons/advanced-electroplating-machine.png"
+electroplater2.corpse = "advanced-electroplating-machine-remnants"
 electroplater2.graphics_set.animation.layers[1].filename = "__BrassTacks__/graphics/entity/advanced-electroplating-machine.png"
 electroplater2.energy_usage = "300kW"
 electroplater2.crafting_speed = 2
@@ -216,4 +217,33 @@ else
     electroplater2.energy_source.emissions_per_minute = nil
 end
 
-data:extend({electroplater, electroplater2})
+local e_corpse = {
+    type = "corpse",
+    name = "electroplating-machine-remnants",
+    icon = "__BrassTacks__/graphics/icons/electroplating-machine.png",
+    icon_size = 64,
+    flags = {"placeable-neutral", "not-on-map"},
+    subgroup = "production-machine-remnants",
+    order = "z",
+    selection_box = {{-1.5, -1.5}, {1.5, 1.5}},
+    tile_width = 3,
+    tile_height = 3,
+    selectable_in_game = false,
+    animation = {
+        direction_count = 1,
+        filename = "__BrassTacks__/graphics/entity/electroplating-machine-corpse.png",
+        priority = "high",
+        width = 192,
+        height = 192,
+        frame_count = 1,
+        line_length = 1,
+        scale = 0.5
+    }
+  }
+
+local e_corpse_2 = table.deepcopy(e_corpse)
+
+e_corpse_2.name = "advanced-electroplating-machine-remnants"
+e_corpse_2.animation.filename = "__BrassTacks__/graphics/entity/advanced-electroplating-machine-corpse.png",
+
+data:extend({electroplater, electroplater2, e_corpse, e_corpse_2})
