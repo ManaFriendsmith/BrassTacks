@@ -224,6 +224,7 @@ local e_corpse = {
     icon_size = 64,
     flags = {"placeable-neutral", "not-on-map"},
     subgroup = "production-machine-remnants",
+    expires = false,
     order = "z",
     selection_box = {{-1.5, -1.5}, {1.5, 1.5}},
     tile_width = 3,
@@ -244,6 +245,7 @@ local e_corpse = {
 local e_corpse_2 = table.deepcopy(e_corpse)
 
 e_corpse_2.name = "advanced-electroplating-machine-remnants"
-e_corpse_2.animation.filename = "__BrassTacks__/graphics/entity/advanced-electroplating-machine-corpse.png",
+e_corpse_2.animation.filename = "__BrassTacks__/graphics/entity/advanced-electroplating-machine-corpse.png"
+e_corpse_2.icon = "__BrassTacks__/graphics/icons/advanced-electroplating-machine.png",
 
 data:extend({electroplater, electroplater2, e_corpse, e_corpse_2})
