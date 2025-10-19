@@ -65,7 +65,7 @@ if misc.difficulty == 3 then
     rm.ReplaceIngredientProportional("turbo-transport-belt", "tungsten-plate", "spurving-bearing", 0.6)
     rm.ReplaceIngredientProportional("turbo-underground-belt", "tungsten-plate", "spurving-bearing", 0.6)
     rm.ReplaceIngredientProportional("turbo-splitter", "tungsten-plate", "spurving-bearing", 0.6)
-    rm.ReplaceIngredientProportional("speed-module", "tungsten-plate", "spurving-bearing", 0.6)
+    rm.ReplaceIngredientProportional("speed-module-3", "tungsten-plate", "spurving-bearing", 0.6)
     rm.ReplaceIngredientProportional("fusion-generator", "tungsten-plate", "spurving-bearing", 0.6, 50)
 end
 
