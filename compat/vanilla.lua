@@ -545,7 +545,9 @@ if misc.difficulty ~= 1 then
         tm.AddPrerequisite("fluid-handling", "hardened-hull")
     else
         tm.AddUnlock("electroplating", "hardened-hull", "-loadbearing-lattice")
-        tm.AddPrerequisite("fluid-handling", "invar-processing")
+        if mods["IfNickel"] then
+            tm.AddPrerequisite("fluid-handling", "invar-processing")
+        end
     end
     if misc.difficulty == 3 then
         
