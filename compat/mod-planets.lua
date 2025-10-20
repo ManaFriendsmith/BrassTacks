@@ -44,6 +44,9 @@ if mods["Paracelsin"] then
     data.raw.tool["galvanization-science-pack"].localised_name = {"item-name.insulation-science-pack"}
     data.raw.fluid["zinc-solution"].localised_name = {"fluid-name.glacite-solution"}
 
+    data.raw.recipe["zinc-solder"].localised_name = {"item-name.self-sealing-solder"}
+    data.raw.recipe["zinc-rivets"].localised_name = {"item-name.extremely-high-tensile-riveting"}
+
     data.raw.item["zinc-pipe"].localised_name = {"item-name.insulated-pipe"}
     data.raw.pipe["zinc-pipe"].localised_name = {"item-name.insulated-pipe"}
     data.raw.item["zinc-pipe-to-ground"].localised_name = {"item-name.insulated-pipe-to-ground"}
