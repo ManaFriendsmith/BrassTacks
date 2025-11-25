@@ -504,7 +504,7 @@ if mods["space-age"] then
         {
             type = "recipe",
             name = "casting-zinc",
-            icon = "__pf-sa-compat__/graphics/icons/casting-zinc.png",
+            icon = misc.VariableGraphicsPath("__pf-sa-compat__/graphics", "icons/casting-zinc.png"),
             icon_size = 64,
             subgroup = "vulcanus-processes",
             order = "b[casting]-ba",
@@ -522,7 +522,7 @@ if mods["space-age"] then
         {
             type = "recipe",
             name = "casting-brass",
-            icon = "__pf-sa-compat__/graphics/icons/casting-brass.png",
+            icon = misc.VariableGraphicsPath("__pf-sa-compat__/graphics", "icons/casting-brass.png"),
             icon_size = 64,
             subgroup = "vulcanus-processes",
             order = "b[casting]-bb",
@@ -541,7 +541,7 @@ if mods["space-age"] then
         {
             type = "recipe",
             name = "hot-dip-galvanized-steel",
-            icon = "__pf-sa-compat__/graphics/icons/hot-dip-galvanized-steel.png",
+            icon = misc.VariableGraphicsPath("__pf-sa-compat__/graphics", "icons/hot-dip-galvanized-steel.png"),
             icon_size = 64,
             icon_mipmaps = 4,
             subgroup = "vulcanus-processes",
@@ -770,7 +770,7 @@ if mods["space-age"] then
         {
             type = "recipe",
             name = "casting-flywheel",
-            icon = "__pf-sa-compat__/graphics/icons/casting-flywheel.png",
+            icon = misc.VariableGraphicsPath("__pf-sa-compat__/graphics", "icons/casting-flywheel.png"),
             icon_size = 64,
             subgroup = "vulcanus-processes",
             order = "b[casting]-da",
@@ -789,7 +789,7 @@ if mods["space-age"] then
         {
             type = "recipe",
             name = "casting-pipe-flange",
-            icon = "__pf-sa-compat__/graphics/icons/casting-pipe-flange.png",
+            icon = misc.VariableGraphicsPath("__pf-sa-compat__/graphics", "icons/casting-pipe-flange.png"),
             icon_size = 64,
             subgroup = "vulcanus-processes",
             order = "b[casting]-ha",

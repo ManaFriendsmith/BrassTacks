@@ -71,7 +71,7 @@ end
 
 rm.RemoveIngredient("casting-iron-gear-wheel", "molten-iron", 5)
 rm.AddIngredient("casting-iron-gear-wheel", "brass-plate", 1)
-data.raw.recipe["casting-iron-gear-wheel"].icon = "__pf-sa-compat__/graphics/icons/casting-iron-gear-wheel.png"
+data.raw.recipe["casting-iron-gear-wheel"].icon = misc.VariableGraphicsPath("__pf-sa-compat__/graphics", "icons/casting-iron-gear-wheel.png")
 
 --visually the foundry has a bunch of belt-like structures in its design. Belts are also a foundry specialty so they're on theme.
 if (misc.difficulty == 3) and (misc.starting_planet ~= "vulcanus") then
