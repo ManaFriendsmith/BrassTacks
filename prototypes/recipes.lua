@@ -357,7 +357,7 @@ if mods["space-age"] then
         {
             type = "recipe",
             name = "brass-separation",
-            icon = "__BrassTacks__/graphics/vector/icons/brass-separation.png",
+            icon = misc.VariableGraphicsPath("__BrassTacks__/graphics", "icons/brass-separation.png"),
             icon_size = 64,
             category = "centrifuging",
             ingredients = {
