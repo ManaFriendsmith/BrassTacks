@@ -5,7 +5,7 @@ local misc = require("__pf-functions__/misc")
 --INTERMEDIATE PRODUCTS
 rm.RemoveIngredient("iron-gear-wheel", "iron-plate", 1)
 rm.AddIngredient("iron-gear-wheel", "brass-plate", 1)
-data.raw.item["iron-gear-wheel"].icon = "__BrassTacks__/graphics/classic/icons/iron-gear-wheel.png"
+data.raw.item["iron-gear-wheel"].icon = misc.VariableGraphicsPath("__BrassTacks__/graphics", "icons/iron-gear-wheel.png")
 
 tm.AddUnlock("lubricant", "brass-balls")
 tm.AddUnlock("lubricant", "bearing")
@@ -20,7 +20,7 @@ if misc.difficulty > 1 then
         rm.ReplaceIngredientProportional("airtight-seal", "copper-plate", "pipe-flange", 0.5)
     end
 
-    data.raw.technology["electric-engine"].icon = "__BrassTacks__/graphics/galdoc/technology/mechanical-engineering-2.png"
+    data.raw.technology["electric-engine"].icon = misc.VariableGraphicsPath("__BrassTacks__/graphics", "technology/mechanical-engineering-2.png")
     data.raw.technology["electric-engine"].localised_name = {"technology-name.mechanical-engineering-2"}
     data.raw.technology["electric-engine"].localised_description = {"technology-description.mechanical-engineering-2"}
     data.raw.technology["electric-engine"].unit.count = 100

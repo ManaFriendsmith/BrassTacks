@@ -318,7 +318,7 @@ if mods["quality"] then
                         icon_size = 64
                       },
                       {
-                        icon = "__BrassTacks__/graphics/classic/icons/galvanized-steel-plate.png",
+                        icon = misc.VariableGraphicsPath("__BrassTacks__/graphics", "icons/galvanized-steel-plate.png"),
                         icon_size = 64
                       },
                       {
@@ -357,7 +357,7 @@ if mods["space-age"] then
         {
             type = "recipe",
             name = "brass-separation",
-            icon = "__BrassTacks__/graphics/classic/icons/brass-separation.png",
+            icon = "__BrassTacks__/graphics/vector/icons/brass-separation.png",
             icon_size = 64,
             category = "centrifuging",
             ingredients = {
@@ -864,7 +864,7 @@ data:extend({
         type = "recipe",
         name = "depleted-zinc-salt-reprocessing",
         category = "electroplating",
-        icon = "__BrassTacks__/graphics/classic/icons/depleted-zinc-salts.png",
+        icon = "__BrassTacks__/graphics/vector/icons/depleted-zinc-salts.png",
         icon_size = 64,
         subgroup = "electroplating",
         order = "z",
@@ -1104,7 +1104,7 @@ if mods["quality"] then
                         icon_size = 64
                       },
                       {
-                        icon = "__BrassTacks__/graphics/classic/icons/galvanized-panel.png",
+                        icon = "__BrassTacks__/graphics/vector/icons/galvanized-panel.png",
                         icon_size = 64
                       },
                       {
@@ -1138,7 +1138,7 @@ if mods["quality"] then
                         icon_size = 64
                       },
                       {
-                        icon = "__BrassTacks__/graphics/classic/icons/galvanized-rod.png",
+                        icon = "__BrassTacks__/graphics/vector/icons/galvanized-rod.png",
                         icon_size = 64
                       },
                       {
@@ -1172,7 +1172,7 @@ if mods["quality"] then
                         icon_size = 64
                       },
                       {
-                        icon = "__BrassTacks__/graphics/classic/icons/galvanized-tubing.png",
+                        icon = "__BrassTacks__/graphics/vector/icons/galvanized-tubing.png",
                         icon_size = 64
                       },
                       {

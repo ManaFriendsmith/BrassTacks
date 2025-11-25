@@ -6,7 +6,7 @@ if misc.difficulty > 1 then
         {
             type = "technology",
             name = "mechanical-engineering",
-            icon = "__BrassTacks__/graphics/classic/technology/mechanical-engineering.png",
+            icon = misc.VariableGraphicsPath("__BrassTacks__/graphics", "technology/mechanical-engineering.png"),
             icon_size = 256,
             effects = {
                 {
@@ -111,7 +111,7 @@ elseif misc.difficulty == 2 then
         {
             type = "technology",
             name = "hardened-hull",
-            icon = "__BrassTacks__/graphics/classic/technology/hardened-hull.png",
+            icon = misc.VariableGraphicsPath("__BrassTacks__/graphics", "technology/hardened-hull.png"),
             icon_size = 256,
             effects = {
                 {

@@ -11,6 +11,7 @@ Version: 2.0.0
   Changes:
     - Broke out prototype-manipulation functions into a separate mod, so I don't need to update every single mod whenever there is inevitably a small bug.
     - Difficulty selection is now handled by a single option in pf-functions. The options are now Minimal (comparable to old easy mode), Moderate (comparable to old hard mode, some things are softened when used with Space Age to expedite getting off Nauvis), and Maximal (lots of extra middle fingers to you and your plans.)
+    - Setting for choosing vector or rendered graphics was moved to pf-functions (required dependency)
     - Renamed several items. Bolted flange -> pipe flange. Articulated mechanism -> linkages. Gearbox -> fast gearbox. Advanced gearbox -> express gearbox.
     - Merged electric engine unit, mechanical engineering 2, and gyroscope into a single technology.
     - Gyroscopes' internal name is now always gyro, and they also always replace BZ gyroscopes. This is rude, but makes maintaining all possible combinations of mods easier.
