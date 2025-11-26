@@ -499,6 +499,7 @@ end
 --TURRETS
 
 if misc.difficulty > 1 then
+    rm.ReplaceIngredientProportional("tank", "steel-plate", "hardened-hull")
     rm.AddIngredient("gun-turret", "flywheel", 1)
     rm.ReplaceIngredientProportional("flamethrower-turret", "iron-gear-wheel", "linkages")
 end

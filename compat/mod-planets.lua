@@ -108,3 +108,64 @@ if mods["Paracelsin"] then
         end
     end
 end
+
+if mods["castra"] then
+    data.raw.planet["castra"].map_gen_settings.autoplace_controls["ancient_military_wreckage"] = {}
+    data.raw.planet["castra"].map_gen_settings.autoplace_settings.entity.settings["ancient-military-wreckage"] = {}  
+    if not data.raw.planet["castra"].map_gen_settings.property_expression_names then
+        data.raw.planet["castra"].map_gen_settings.property_expression_names = {}
+    end
+    data.raw.planet["castra"].map_gen_settings.property_expression_names["entity:ancient-military-wreckage:richness"] = "military_wreckage_richness"
+    data.raw.planet["castra"].map_gen_settings.property_expression_names["entity:ancient-military-wreckage:probability"] = "military_wreckage_probability"
+    data.raw.planet["castra"].map_gen_settings.property_expression_names["entity:tank-remnants:probability"] = "vehicle_corpse_probability"
+    data.raw.planet["castra"].map_gen_settings.property_expression_names["entity:car-remnants:probability"] = "vehicle_corpse_probability"
+    data.raw.planet["castra"].map_gen_settings.property_expression_names["entity:gun-turret-remnants:probability"] = "vehicle_corpse_probability"
+    data.raw.planet["castra"].map_gen_settings.property_expression_names["entity:rocket-turret-remnants:probability"] = "vehicle_corpse_probability"
+
+    tm.AddUnlock("planet-discovery-castra", "bullet-casing-sorting")
+    tm.AddUnlock("planet-discovery-castra", "ancient-military-wreckage-recycling")
+    if misc.difficulty == 3 then
+        tm.AddUnlock("gunpowder-processing", "blast-galvanized-panel")
+        tm.AddUnlock("gunpowder-processing", "blast-galvanized-rod")
+        tm.AddUnlock("gunpowder-processing", "blast-galvanized-tubing")
+
+        rm.AddIngredient("battery-nickel", "galvanized-panel")
+        rm.AddIngredient("rocket-fuel-sulfur", "galvanized-panel")
+        if not mods["BrimStuff"] then
+            rm.AddIngredient("rocket-fuel-sulfur", "pipe-flange")
+        end
+
+        rm.AddIngredient("forge", "complex-joint", 12)
+        if not mods["IfNickel"] then
+            rm.ReplaceIngredientProportional("engine-unit-gunpowder", "pipe", "galvanized-tubing")
+        end
+    end
+    tm.AddUnlock("gunpowder-processing", "blast-galvanized-steel-plate")
+
+    rm.AddProduct("jammed-data-collector-process", {type="item", name="ancient-military-wreckage", amount=1, probability=0.15})
+
+    if misc.difficulty > 1 then
+        tm.AddUnlock("millerite-processing", "flywheel-nickel")
+        tm.AddUnlock("millerite-processing", "hardened-hull-nickel")
+
+        rm.ReplaceIngredientProportional("tank-nickel", "iron-gear-wheel", "hardened-hull")
+        rm.ReplaceIngredientProportional("forge", "steel-plate", "hardened-hull")
+
+        rm.AddIngredient("engine-unit-gunpowder", "linkages", 1)
+        rm.AddIngredient("distractor-capsule-castra-data", "gyro", 4)
+        rm.AddProduct("custom-ancient-military-wreckage-recycling", {type="item", name="hardened-hull", amount=1, probability=0.05})
+
+        rm.AddIngredient("military-transport-belt", "hardened-hull", 2)
+        rm.AddIngredient("military-underground-belt", "hardened-hull", 5)
+        rm.AddIngredient("military-splitter", "complex-joint", 2)
+    else
+        rm.ReplaceIngredientProportional("forge", "steel-plate", "galvanized-steel-plate")
+        --need to get back to my roots of this being a mod about spamming the recipe for every vaguely mechanical thing with gears
+        rm.AddIngredient("military-splitter", "iron-gear-wheel", 10)
+    end
+
+    rm.AddIngredient("firearm-magazine-nickel", "brass-plate", 1)
+
+    tm.AddUnlock("scrap-recycling-productivity", {type="change-recipe-productivity", recipe="bullet-casing-sorting", change=0.1})
+    tm.AddUnlock("scrap-recycling-productivity", {type="change-recipe-productivity", recipe="ancient-military-wreckage-recycling", change=0.1})
+end

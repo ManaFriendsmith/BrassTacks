@@ -352,7 +352,6 @@ if mods["space-age"] then
     --data.raw.item["zinc-plate"].localised_description = {"recipe-description.hint-nonstandard-recycling"}
 
     data.raw.recipe["brass-plate"].force_auto_recycle = true
-
     data:extend({
         {
             type = "recipe",
@@ -621,6 +620,111 @@ if mods["space-age"] then
             }
         })
     end
+
+    if mods["castra"] then
+        data:extend({
+            {
+                type = "recipe",
+                name = "bullet-casing-sorting",
+                icons = {
+                    {
+                        icon = misc.VariableGraphicsPath("__BrassTacks__/graphics", "icons/brass-plate.png"),
+                        icon_size = 64
+                    },
+                    {
+                        icon = "__BrassTacks__/graphics/icons/ancient-military-wreckage.png",
+                        icon_size = 64
+                    }
+                },
+                subgroup = "castra-processes",
+                order = "aa",
+                category = "crafting",
+                ingredients = {
+                    {type="item", name="ancient-military-wreckage", amount=1}
+                },
+                results = {
+                    {type="item", name="brass-plate", amount=1}
+                },
+                energy_required = 1,
+                enabled = false
+            },
+            {
+                type = "recipe",
+                name = "custom-ancient-military-wreckage-recycling",
+                localised_name = {"recipe-name.recycling", {"item-name.ancient-military-wreckage"}},
+                icons = {
+                        {
+                            icon = "__quality__/graphics/icons/recycling.png",
+                            icon_size = 64
+                        },
+                        {
+                            icon = "__BrassTacks__/graphics/icons/ancient-military-wreckage.png",
+                            icon_size = 64
+                        },
+                        {
+                            icon = "__quality__/graphics/icons/recycling-top.png",
+                            icon_size = 64
+                        }
+                },
+                category = "recycling-or-hand-crafting",
+                ingredients = {
+                    {type="item", name="ancient-military-wreckage", amount=1}
+                },
+                results = {
+                    {type="item", name="brass-plate", amount=1, probability = 0.75},
+                    {type="item", name="gunpowder", amount=1, probability = 0.16},
+                    {type="item", name="millerite", amount=1, probability = 0.1},
+                    {type="item", name=mods["IfNickel"] and "cst-nickel-plate" or "nickel-plate", amount=1, probability = 0.1},
+                    {type="item", name="engine-unit", amount=1, probability = 0.03},
+                    {type="item", name="electric-engine-unit", amount=1, probability = 0.03},
+                    {type="item", name="steel-plate", amount=1, probability = 0.02},
+                    {type="item", name="castra-data", amount=1, probability = 0.01},
+                    {type="item", name="land-mine", amount=1, probability = 0.01},
+                    {type="item", name="submachine-gun", amount=1, probability = 0.01},
+                    {type="item", name="rocket-launcher", amount=1, probability = 0.01},
+                },
+                bespoke = "ancient-military-wreckage",
+                energy_required = 1,
+                subgroup = "castra-processes",
+                order = "ab",
+                allow_productivity = false,
+                allow_decomposition = false,
+                unlock_results = false
+            },
+            {
+                type = "recipe",
+                name = "blast-galvanized-steel-plate",
+                localised_description = {"recipe-description.blast-galvanizing"},
+                icons = {
+                    {
+                        icon = misc.VariableGraphicsPath("__BrassTacks__/graphics", "icons/galvanized-steel-plate.png"),
+                        icon_size = 64
+                    },
+                    {
+                        icon = "__base__/graphics/icons/explosives.png",
+                        icon_size = 64,
+                        scale = 0.25,
+                        shift = {8, 8}
+                    }
+                },
+                subgroup = (misc.difficulty == 3) and "castra-processes" or "raw-material",
+                order = (misc.difficulty == 3) and "ac4" or "a[smelting]-ca",
+                category = (misc.difficulty == 3) and "electroplating" or "advanced-crafting",
+                additional_categories = {"castra-forge"},
+                ingredients = {
+                    {type="item", name="steel-plate", amount=1},
+                    {type="item", name=mods["IfNickel"] and "cst-nickel-plate" or "nickel-plate", amount=2},
+                    {type="item", name="gunpowder", amount=2},
+                },
+                results = {
+                    {type="item", name="galvanized-steel-plate", amount=1, probability=0.5},
+                    {type="item", name="ancient-military-wreckage", amount=1, probability=0.01}
+                },
+                energy_required = 1,
+                enabled = false
+            }
+        })
+    end
 end
 
 if misc.difficulty == 1 then
@@ -806,6 +910,83 @@ if mods["space-age"] then
             enabled = false
         }
     })
+
+    if mods["castra"] then
+        data:extend({
+            {
+                type = "recipe",
+                name = "flywheel-nickel",
+                localised_name = {mods["IfNickel"] and "recipe-name.flywheel-cobalt" or "recipe-name.flywheel-cobalt"},
+                icons = {
+                    {
+                        icon = misc.VariableGraphicsPath("__BrassTacks__/graphics", "icons/flywheel.png"),
+                        icon_size = 64
+                    },
+                    {
+                        icon = "__castra__/graphics/icons/nickel-plate.png",
+                        icon_size = 64,
+                        icon_mipmaps = 4,
+                        scale = 0.25,
+                        shift = {8, 8}
+                    }
+                },
+                subgroup = "castra-processes",
+                order = "ad",
+                category = "crafting",
+                ingredients = {
+                    {type="item", name="iron-gear-wheel", amount=1},
+                    {type="item", name=mods["IfNickel"] and "cst-nickel-plate" or "nickel-plate", amount=5},
+                },
+                results = {
+                    {type="item", name="flywheel", amount=1}
+                },
+                lasermill_dlc = {helium=-1, unlock="millerite-processing"},
+                energy_required = 2,
+                allow_productivity = true,
+                enabled = false
+            },
+            {
+                type = "recipe",
+                name = "hardened-hull-nickel",
+                localised_name = {mods["IfNickel"] and "recipe-name.hardened-hull-cobalt" or "recipe-name.hardened-hull-cobalt"},
+                icons = {
+                    {
+                        icon = misc.VariableGraphicsPath("__BrassTacks__/graphics", "icons/hardened-hull.png"),
+                        icon_size = 64
+                    },
+                    {
+                        icon = "__castra__/graphics/icons/nickel-plate.png",
+                        icon_size = 64,
+                        icon_mipmaps = 4,
+                        scale = 0.25,
+                        shift = {8, 8}
+                    }
+                },
+                subgroup = "castra-processes",
+                order = "ad",
+                category = "pressing",
+                ingredients = {
+                    {type="item", name="galvanized-steel-plate", amount=1},
+                    {type="item", name="brass-plate", amount=4},
+                    {type="item", name="iron-plate", amount=1}
+                },
+                results = {
+                    {type="item", name="hardened-hull", amount=1}
+                },
+                lasermill_dlc = {helium=-1, unlock="millerite-processing"},
+                energy_required = 5,
+                allow_productivity = true,
+                enabled = false
+            }
+        })
+
+        if mods["IfNickel"] then
+            rm.ReplaceIngredientProportional("hardened-hull-nickel", "iron-plate", "invar-plate")
+            rm.ReplaceIngredientProportional("hardened-hull-nickel", "galvanized-steel-plate", "cst-nickel-plate", 4)
+        else
+            rm.ReplaceIngredientProportional("hardened-hull-nickel", "iron-plate", "nickel-plate", 2)
+        end
+    end
 end
 
 if misc.difficulty == 2 then
@@ -981,6 +1162,11 @@ if mods["space-age"] then
     data.raw.recipe["hot-dip-galvanized-steel"].subgroup = "electroplating"
     data.raw.recipe["hot-dip-galvanized-steel"].order = d2
 
+    if mods["castra"] then
+        data.raw.recipe["blast-galvanized-steel-plate"].subgroup = "electroplating"
+        data.raw.recipe["blast-galvanized-steel-plate"].order = d3
+    end
+
     data:extend({
         {
             type = "recipe",
@@ -1071,6 +1257,107 @@ if mods["space-age"] then
             enabled = false
         },
     })
+
+    if mods["castra"] then
+        data:extend({
+            {
+                type = "recipe",
+                name = "blast-galvanized-panel",
+                localised_description = {"recipe-description.blast-galvanizing"},
+                icons = {
+                    {
+                        icon = "__BrassTacks__/graphics/vector/icons/galvanized-panel.png",
+                        icon_size = 64
+                    },
+                    {
+                        icon = "__base__/graphics/icons/explosives.png",
+                        icon_size = 64,
+                        scale = 0.25,
+                        shift = {8, 8}
+                    }
+                },
+                subgroup = "electroplating",
+                order = "a3",
+                category = "electroplating",
+                additional_categories = {"castra-forge"},
+                ingredients = {
+                    {type="item", name="iron-plate", amount=1},
+                    {type="item", name=mods["IfNickel"] and "cst-nickel-plate" or "nickel-plate", amount=1},
+                    {type="item", name="gunpowder", amount=1},
+                },
+                results = {
+                    {type="item", name="galvanized-panel", amount=1, probability=0.5},
+                    {type="item", name="ancient-military-wreckage", amount=1, probability=0.005}
+                },
+                energy_required = 0.5,
+                enabled = false
+            },
+            {
+                type = "recipe",
+                name = "blast-galvanized-rod",
+                localised_description = {"recipe-description.blast-galvanizing"},
+                icons = {
+                    {
+                        icon = "__BrassTacks__/graphics/vector/icons/galvanized-rod.png",
+                        icon_size = 64
+                    },
+                    {
+                        icon = "__base__/graphics/icons/explosives.png",
+                        icon_size = 64,
+                        scale = 0.25,
+                        shift = {8, 8}
+                    }
+                },
+                subgroup = "electroplating",
+                order = "b3",
+                category = "electroplating",
+                additional_categories = {"castra-forge"},
+                ingredients = {
+                    {type="item", name="iron-stick", amount=1},
+                    {type="item", name=mods["IfNickel"] and "cst-nickel-plate" or "nickel-plate", amount=1},
+                    {type="item", name="gunpowder", amount=1},
+                },
+                results = {
+                    {type="item", name="galvanized-rod", amount=1, probability=0.5},
+                    {type="item", name="ancient-military-wreckage", amount=1, probability=0.005}
+                },
+                energy_required = 0.5,
+                enabled = false
+            },
+            {
+                type = "recipe",
+                name = "blast-galvanized-tubing",
+                localised_description = {"recipe-description.blast-galvanizing"},
+                icons = {
+                    {
+                        icon = "__BrassTacks__/graphics/vector/icons/galvanized-tubing.png",
+                        icon_size = 64
+                    },
+                    {
+                        icon = "__base__/graphics/icons/explosives.png",
+                        icon_size = 64,
+                        scale = 0.25,
+                        shift = {8, 8}
+                    }
+                },
+                subgroup = "electroplating",
+                order = "c3",
+                category = "electroplating",
+                additional_categories = {"castra-forge"},
+                ingredients = {
+                    {type="item", name="pipe", amount=1},
+                    {type="item", name=mods["IfNickel"] and "cst-nickel-plate" or "nickel-plate", amount=1},
+                    {type="item", name="gunpowder", amount=1},
+                },
+                results = {
+                    {type="item", name="galvanized-tubing", amount=1, probability=0.5},
+                    {type="item", name="ancient-military-wreckage", amount=1, probability=0.005}
+                },
+                energy_required = 0.5,
+                enabled = false
+            }
+        })
+    end
 end
 
 if mods["bztin"] and data.raw.item["tinned-cable"] then

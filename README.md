@@ -39,3 +39,4 @@ The assets derived from Factorio assets in this mod are:
 - cheese ore entity, item and technology icon (derived from copper ore)
 - ore icons in brass-separation icon (derived from copper ore and stone)
 - pipe connector for electroplating machine (derived from assembling machine pipe connector)
+- ancient military wreckage for Castra compatibility (derived from small and medium remnants)

@@ -202,6 +202,27 @@ if mods["space-age"] then
             spoil_result = "zinc-ore"
         }
     })
+
+    if mods["castra"] then
+      data:extend({
+        {
+            type = "item",
+            name = "ancient-military-wreckage",
+            icon = "__BrassTacks__/graphics/icons/ancient-military-wreckage.png",
+            icon_size = 64,
+            subgroup = "castra-processes",
+            order = "a",
+            inventory_move_sound = item_sounds.resource_inventory_move,
+            pick_sound = item_sounds.resource_inventory_pickup,
+            drop_sound = item_sounds.resource_inventory_move,
+            stack_size = 50,
+            default_import_location = "castra",
+            canonical_cost = 10,
+            canonical_recipe = false,
+            weight = 10*kg
+        }
+      })
+    end
 end
 
 if misc.difficulty == 1 then
