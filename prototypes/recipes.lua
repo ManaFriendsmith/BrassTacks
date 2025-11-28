@@ -707,8 +707,8 @@ if mods["space-age"] then
                         shift = {8, 8}
                     }
                 },
-                subgroup = (misc.difficulty == 3) and "castra-processes" or "raw-material",
-                order = (misc.difficulty == 3) and "ac4" or "a[smelting]-ca",
+                subgroup = (misc.difficulty == 3) and "electroplating" or "raw-material",
+                order = (misc.difficulty == 3) and "d3" or "a[smelting]-ca",
                 category = (misc.difficulty == 3) and "electroplating" or "advanced-crafting",
                 additional_categories = {"castra-forge"},
                 ingredients = {
@@ -916,7 +916,6 @@ if mods["space-age"] then
             {
                 type = "recipe",
                 name = "flywheel-nickel",
-                localised_name = {mods["IfNickel"] and "recipe-name.flywheel-cobalt" or "recipe-name.flywheel-cobalt"},
                 icons = {
                     {
                         icon = misc.VariableGraphicsPath("__BrassTacks__/graphics", "icons/flywheel.png"),
@@ -948,7 +947,6 @@ if mods["space-age"] then
             {
                 type = "recipe",
                 name = "hardened-hull-nickel",
-                localised_name = {mods["IfNickel"] and "recipe-name.hardened-hull-cobalt" or "recipe-name.hardened-hull-cobalt"},
                 icons = {
                     {
                         icon = misc.VariableGraphicsPath("__BrassTacks__/graphics", "icons/hardened-hull.png"),
@@ -983,6 +981,9 @@ if mods["space-age"] then
         if mods["IfNickel"] then
             rm.ReplaceIngredientProportional("hardened-hull-nickel", "iron-plate", "invar-plate")
             rm.ReplaceIngredientProportional("hardened-hull-nickel", "galvanized-steel-plate", "cst-nickel-plate", 4)
+
+            data.raw.recipe["flywheel-nickel"].localised_name = {"flywheel-cobalt"}
+            data.raw.recipe["hardened-hull-nickel"].localised_name = {"hardened-hull-cobalt"}
         else
             rm.ReplaceIngredientProportional("hardened-hull-nickel", "iron-plate", "nickel-plate", 2)
         end
@@ -1160,11 +1161,11 @@ rm.AddIngredient("complex-joint", "galvanized-rod", 8)
 
 if mods["space-age"] then
     data.raw.recipe["hot-dip-galvanized-steel"].subgroup = "electroplating"
-    data.raw.recipe["hot-dip-galvanized-steel"].order = d2
+    data.raw.recipe["hot-dip-galvanized-steel"].order = "d2"
 
     if mods["castra"] then
         data.raw.recipe["blast-galvanized-steel-plate"].subgroup = "electroplating"
-        data.raw.recipe["blast-galvanized-steel-plate"].order = d3
+        data.raw.recipe["blast-galvanized-steel-plate"].order = "d3"
     end
 
     data:extend({
