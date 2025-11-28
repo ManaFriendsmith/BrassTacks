@@ -292,7 +292,7 @@ end
 
 --assemblers are abstract, but you can't electroplate with a laser.
 if misc.difficulty ~= 3 then
-    misc.AddLaserMillData("galvanized-steel-plate", {helium=-1}, {helium=-1})
+    rm.AddLaserMillData("galvanized-steel-plate", {helium=-1}, {helium=-1})
 end
 
 if mods["quality"] then
