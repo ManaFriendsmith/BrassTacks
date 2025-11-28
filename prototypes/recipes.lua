@@ -714,8 +714,8 @@ if mods["space-age"] then
                 additional_categories = {"castra-forge"},
                 ingredients = {
                     {type="item", name="steel-plate", amount=1},
-                    {type="item", name=mods["IfNickel"] and "cst-nickel-plate" or "nickel-plate", amount=2},
-                    {type="item", name="gunpowder", amount=2},
+                    {type="item", name=mods["IfNickel"] and "cst-nickel-plate" or "nickel-plate", amount=3},
+                    {type="item", name="gunpowder", amount=3},
                 },
                 results = {
                     {type="item", name="galvanized-steel-plate", amount=1, probability=0.5},
@@ -966,7 +966,7 @@ if mods["space-age"] then
                 category = "pressing",
                 ingredients = {
                     {type="item", name="galvanized-steel-plate", amount=1},
-                    {type="item", name="brass-plate", amount=4},
+                    {type="item", name="brass-plate", amount=3},
                     {type="item", name="iron-plate", amount=1}
                 },
                 results = {
