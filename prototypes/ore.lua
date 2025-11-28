@@ -202,11 +202,6 @@ if mods["castra"] then
     },
     {
       type = "noise-expression",
-      name = "vehicle_corpse_probability",
-      expression = "if{condition=military_wreckage_richness, true_branch=0.01, false_branch=0}"
-    },
-    {
-      type = "noise-expression",
       name = "military_wreckage_richness",
       expression = "mil_spot_noise * (sqrt(mil_noise + 1.5))",
       local_expressions = {

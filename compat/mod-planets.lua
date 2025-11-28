@@ -117,10 +117,6 @@ if mods["castra"] then
     end
     data.raw.planet["castra"].map_gen_settings.property_expression_names["entity:ancient-military-wreckage:richness"] = "military_wreckage_richness"
     data.raw.planet["castra"].map_gen_settings.property_expression_names["entity:ancient-military-wreckage:probability"] = "military_wreckage_probability"
-    data.raw.planet["castra"].map_gen_settings.property_expression_names["entity:tank-remnants:probability"] = "vehicle_corpse_probability"
-    data.raw.planet["castra"].map_gen_settings.property_expression_names["entity:car-remnants:probability"] = "vehicle_corpse_probability"
-    data.raw.planet["castra"].map_gen_settings.property_expression_names["entity:gun-turret-remnants:probability"] = "vehicle_corpse_probability"
-    data.raw.planet["castra"].map_gen_settings.property_expression_names["entity:rocket-turret-remnants:probability"] = "vehicle_corpse_probability"
 
     tm.AddUnlock("planet-discovery-castra", "bullet-casing-sorting")
     tm.AddUnlock("planet-discovery-castra", "ancient-military-wreckage-recycling")
