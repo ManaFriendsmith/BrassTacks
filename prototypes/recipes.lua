@@ -687,6 +687,7 @@ if mods["space-age"] then
                 energy_required = 1,
                 subgroup = "castra-processes",
                 order = "ab",
+                enabled = false,
                 allow_productivity = false,
                 allow_decomposition = false,
                 unlock_results = false
