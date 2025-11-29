@@ -983,8 +983,8 @@ if mods["space-age"] then
             rm.ReplaceIngredientProportional("hardened-hull-nickel", "iron-plate", "invar-plate")
             rm.ReplaceIngredientProportional("hardened-hull-nickel", "galvanized-steel-plate", "cst-nickel-plate", 4)
 
-            data.raw.recipe["flywheel-nickel"].localised_name = {"flywheel-cobalt"}
-            data.raw.recipe["hardened-hull-nickel"].localised_name = {"hardened-hull-cobalt"}
+            data.raw.recipe["flywheel-nickel"].localised_name = {"recipe-name.flywheel-cobalt"}
+            data.raw.recipe["hardened-hull-nickel"].localised_name = {"recipe-name.hardened-hull-cobalt"}
         else
             rm.ReplaceIngredientProportional("hardened-hull-nickel", "iron-plate", "nickel-plate", 2)
         end
