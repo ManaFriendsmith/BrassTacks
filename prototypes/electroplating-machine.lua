@@ -26,7 +26,7 @@ local electroplater = {
     corpse = "electroplating-machine-remnants",
     dying_explosion = "chemical-plant-explosion",
     circuit_wire_max_distance = assembling_machine_circuit_wire_max_distance,
-    heating_energy = "80kW",
+    heating_energy = mods["space-age"] and "80kW" or nil,
     circuit_connector = circuit_connector_definitions.create_vector(
         universal_connector_template,
         {
@@ -89,12 +89,12 @@ local electroplater = {
             }
           }
         },
-      frozen_patch = {
+      frozen_patch = mods["space-age"] and {
         filename = "__BrassTacks__/graphics/entity/electroplating-machine-frozen.png",
         width = 192,
         height = 192,
         scale = 0.5
-      },
+      } or nil,
       reset_animation_when_frozen = false
     },
     impact_category = "metal-large",
